@@ -1,10 +1,10 @@
-[![Travis-CI Build Status](https://travis-ci.org/noamross/texttable.svg?branch=master)](https://travis-ci.org/noamross/texttable) [![Coverage Status](https://img.shields.io/codecov/c/github/noamross/texttable/master.svg)](https://codecov.io/github/noamross/texttable?branch=master)
+[![Project Status: WIP - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip) [![Travis-CI Build Status](https://travis-ci.org/noamross/texttable.svg?branch=master)](https://travis-ci.org/noamross/texttable) [![Coverage Status](https://img.shields.io/codecov/c/github/noamross/texttable/master.svg)](https://codecov.io/github/noamross/texttable?branch=master)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 texttable
 =========
 
-This package imports tabular data that is stored in a variety of text formats.
+This package imports tabular data that is stored in a variety of text formats. It uses [Pandoc](http://pandoc.org/) to convert various formats to HTML and then imports them via `rvest::html_table`.
 
 Install
 -------
@@ -32,7 +32,7 @@ imported
 #> 2  2 Sample 2  1.2
 ```
 
-Note that `texttable()` will trim leading whitespace from string inputs by default.
+Note that `texttable()` will trim leading whitespace from character inputs by default.
 
 Get tables out of text files, and even MS Word files:
 

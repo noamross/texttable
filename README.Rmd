@@ -4,6 +4,7 @@ output:
     variant: markdown_github
 ---
 
+[![Project Status: WIP - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![Travis-CI Build Status](https://travis-ci.org/noamross/texttable.svg?branch=master)](https://travis-ci.org/noamross/texttable)
 [![Coverage Status](https://img.shields.io/codecov/c/github/noamross/texttable/master.svg)](https://codecov.io/github/noamross/texttable?branch=master)
 
@@ -20,6 +21,8 @@ knitr::opts_chunk$set(
 # texttable
 
 This package imports tabular data that is stored in a variety of text formats.
+It uses [Pandoc](http://pandoc.org/) to convert various formats to HTML and then
+imports them via `rvest::html_table`.
 
 ## Install
 
@@ -42,7 +45,7 @@ imported = texttable(sample_table)
 imported
 ```
 
-Note that `texttable()` will trim leading whitespace from string inputs by default.
+Note that `texttable()` will trim leading whitespace from character inputs by default.
 
 Get tables out of text files, and even MS Word files:
 
