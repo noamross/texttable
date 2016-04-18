@@ -1,0 +1,62 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+[![Travis-CI Build Status](https://travis-ci.org/noamross/texttable.svg?branch=master)](https://travis-ci.org/noamross/texttable)
+[![Coverage Status](https://img.shields.io/codecov/c/github/noamross/texttable/master.svg)](https://codecov.io/github/noamross/texttable?branch=master)
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# texttable
+
+This package imports tabular data that is stored in a variety of text formats.
+
+## Install
+
+    devtools::install_github('noamross/texttable')
+
+## Usage
+
+
+Enter tabular in the text format of your choice:
+
+```{r}
+library(texttable)
+sample_table = "
+                | My | Tabular  | Data |
+                |----|----------|------|
+                |   1| Sample 1 | 0.3  |
+                |   2| Sample 2 | 1.2  |
+               "
+imported = texttable(sample_table)
+imported
+```
+
+Note that `texttable()` will trim leading whitespace from string inputs by default.
+
+Get tables out of text files, and even MS Word files:
+
+```{r}
+tables = texttable('tests/testthat/tables.markdown')
+tables[[1]]
+word_tables = texttable('tests/testthat/tables.docx')
+word_tables[[1]]
+```
+
+## Known issues
+
+Pandoc conversion of tables from `asciidoc`, `context`, `docbook`, `latex`,
+`man`, `mediawiki`, `rtf`, `texinfo`, and `odt` formats has known issues and
+does not always work. For these formats `texttable` will provide a warning,
+as the output quality is unknown and will change with your current version of
+Pandoc.
