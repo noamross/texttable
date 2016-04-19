@@ -1,4 +1,8 @@
-problem_formats = c('asciidoc', 'context', 'docbook', 'latex', 'man', 'mediawiki', 'rtf', 'texinfo', 'odt')
+pandoc_readers = c("native", "json", "markdown", "markdown_strict", "markdown_phpextra", "markdown_github", "commonmark", "textile", "rst", "html", "docbook", "t2t", "docx", "odt", "epub", "opml", "org", "mediawiki", "twiki", "haddock", "latex")
+
+pandoc_extensions = c("xhtml", "html", "htm", "tex", "latex", "ltx", "rst", "org", "lhs", "db", "opml", "wiki", "dokuwiki", "textile", "native", "json", "docx", "t2t", "epub", "odt", "pdf", "doc")
+
+problem_formats = c("latex", "haddock", "odt")
 
 #' Import tables from various text formats
 #'
@@ -29,10 +33,16 @@ texttable <- function(text, format = NULL, trim_leading = TRUE, ...) {
     stop("Only inputs of length 1 are allowed.")
   }
 
-  textfile = as_file(text, trim_leading)
+  textfile <- as_file(text, trim_leading)
 
-  if(is.null(format) & tools::file_ext(text) == "") {
+  extension <- tools::file_ext(textfile)
+
+  if(is.null(format) & extension %in% c("", "md")) {
     format <- "markdown"
+  }
+
+  if(extension %in% pandoc_readers && !(extension %in% pandoc_extensions)) {
+    format <- extension
   }
 
   if(!is.null(format) && format %in% problem_formats) {

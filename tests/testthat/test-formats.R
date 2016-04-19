@@ -3,8 +3,11 @@
 # Test all the file types that pandoc lists as inputs
 test_files = list.files(pattern = "table.*[^R]$")
 
+test_files = test_files[-grep("(odt|latex|haddock)", test_files)]
+
 for (file_name in test_files) {
-  test_that(paste("Importing works from", tools::file_ext(file_name), "format"), {
+  file_type = tools::file_ext(file_name)
+  test_that(paste("Importing works from", file_type, "format"), {
     imported = texttable(file_name)
     expect_true(is.list(imported))
     expect_true(length(imported) >= 1)

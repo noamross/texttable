@@ -7,7 +7,7 @@ Maintainer: Noam Ross <noam.ross@gmail.com>
 Description: This package imports tables contained in documents of a variety
     of text-based formats. It supports all formats that can be converted by
     Pandoc, including markdown, Textile, reStructuredText, DocBook, txt2tags,
-    docx, ODT, EPUB, OPML), Emacs Org mode, MediaWiki markup, TWiki markup,
+    docx, ODT, EPUB, OPML, Emacs Org mode, MediaWiki markup, TWiki markup,
     Haddock markup, and LaTeX.
 License: MIT
 LazyData: TRUE

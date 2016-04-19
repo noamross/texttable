@@ -58,8 +58,7 @@ word_tables[[1]]
 
 ## Known issues
 
-Pandoc conversion of tables from `asciidoc`, `context`, `docbook`, `latex`,
-`man`, `mediawiki`, `rtf`, `texinfo`, and `odt` formats has known issues and
+Pandoc conversion of tables from `latex`, `haddock`, `odt`, formats has known issues and
 does not always work. For these formats `texttable` will provide a warning,
 as the output quality is unknown and will change with your current version of
 Pandoc.
