@@ -5,6 +5,8 @@ test_files = list.files(pattern = "table.*[^R]$")
 
 test_files = test_files[-grep("(odt|latex|haddock)", test_files)]
 
+cat("\nPandoc version:", as.character(rmarkdown::pandoc_version()), "\n\n")
+
 context("Format checking")
 for (file_name in test_files) {
   file_type = tools::file_ext(file_name)
