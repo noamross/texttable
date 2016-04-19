@@ -11,6 +11,21 @@ Install
 
     devtools::install_github('noamross/texttable')
 
+Note that **testtable** requires the latest pandoc, which can be downloaded [here](https://github.com/jgm/pandoc/releases/tag/1.17.0.2). To install via the command line:
+
+Linux:
+
+    wget https://github.com/jgm/pandoc/releases/download/1.17.0.2/pandoc-1.17.0.2-1-amd64.deb
+    sudo dpkg -i pandoc-1.17.0.2-1-amd64.deb
+
+OSX (Homebrew):
+
+    brew install pandoc
+
+Windows:
+
+    ????
+
 Usage
 -----
 
