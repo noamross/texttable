@@ -9,15 +9,15 @@ Description: This package imports tables contained in documents of a variety
     Pandoc, including markdown, Textile, reStructuredText, DocBook, txt2tags,
     docx, ODT, EPUB, OPML, Emacs Org mode, MediaWiki markup, TWiki markup,
     Haddock markup, and LaTeX.
-License: MIT
+License: MIT + file LICENSE
 LazyData: TRUE
 Imports:
     rmarkdown,
     xml2,
     rvest,
-    httr
+    httr,
+    tools,
+    stringi
 Suggests:
     testthat
 RoxygenNote: 5.0.1
-
-

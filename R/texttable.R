@@ -25,7 +25,17 @@ problem_formats = c("latex", "haddock", "odt")
 #'
 #'          Due to issues in pandoc, ODT and DocBook formats do not currently
 #'          work.
-#' @import rmarkdown xml2 rvest assertthat
+#' @examples
+#'
+#'   texttable("https://raw.githubusercontent.com/jgm/pandoc/master/tests/tables.mediawiki")
+#'   texttable("
+#'              | My | Tabular  | Data |
+#'              |----|----------|------|
+#'              |   1| Sample 1 | 0.3  |
+#'              |   2| Sample 2 | 1.2  |
+#'             ")
+#'
+#' @import rmarkdown xml2 rvest
 #' @export
 texttable <- function(text, format = NULL, trim_leading = TRUE, ...) {
 

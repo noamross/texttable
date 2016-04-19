@@ -35,4 +35,15 @@ Parse tables from various formats into data frames.
          Due to issues in pandoc, ODT and DocBook formats do not currently
          work.
 }
+\examples{
+
+  texttable("https://raw.githubusercontent.com/jgm/pandoc/master/tests/tables.mediawiki")
+  texttable("
+             | My | Tabular  | Data |
+             |----|----------|------|
+             |   1| Sample 1 | 0.3  |
+             |   2| Sample 2 | 1.2  |
+            ")
+
+}
 
