@@ -2,13 +2,9 @@ language: r
 r:
   - release
   - devel
+pandoc_version: 1.17.0.2
 sudo: false
 cache: packages
-
-
-before_install:
-  - wget https://github.com/jgm/pandoc/releases/download/1.17.0.2/pandoc-1.17.0.2-1-amd64.deb
-  - sudo dpkg -i pandoc-1.17.0.2-1-amd64.deb
 
 r_github_packages:
 - jimhester/covr
