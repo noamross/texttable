@@ -5,15 +5,16 @@ test_files = list.files(pattern = "table.*[^R]$")
 
 test_files = test_files[-grep("(odt|latex|haddock)", test_files)]
 
+context("Format checking")
 for (file_name in test_files) {
   file_type = tools::file_ext(file_name)
-  test_that(paste("Importing works from", file_type, "format"), {
-    imported = texttable(file_name)
-    expect_true(is.list(imported))
-    expect_true(length(imported) >= 1)
-    expect_true(all(sapply(imported, is.data.frame)))
-  })
+  imported = texttable(file_name)
+  test_that(paste("Importing works from", file_type, "format"), expect_true(is.list(imported)))
+  test_that(paste(file_type, "format gives list of length >= 1"), expect_true(length(imported) >= 1))
+  test_that(paste("All components of list are data frames for ", file_type), expect_true(all(sapply(imported, is.data.frame))))
 }
+
+context("Import type checking")
 
 test_that("Importing works from a URL", {
   imported = texttable("https://raw.githubusercontent.com/jgm/pandoc/master/tests/tables.markdown")
